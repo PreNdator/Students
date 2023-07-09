@@ -38,14 +38,14 @@ namespace Students
 
             while (curr != null && !isOnly3(curr.info.grades) )
             {
-                student = new Tuple<string, float>(curr.info.first_name, mean(curr.info.grades));
+                student = new Tuple<string, float>(curr.info.last_name, mean(curr.info.grades));
                 studentsList1.Add(student);
                 curr = curr.next;
             }
             MyList<Tuple<string, float>>.Node lastOnly3 = null;
             if (curr != null && isOnly3(curr.info.grades))
             {
-                student = new Tuple<string, float>(curr.info.first_name, mean(curr.info.grades));
+                student = new Tuple<string, float>(curr.info.last_name, mean(curr.info.grades));
                 studentsList1.AddBefore(studentsList1.first, student);
                 lastOnly3 = studentsList1.first;
                 curr = curr.next;
