@@ -43,10 +43,17 @@ namespace Students
                 curr = curr.next;
             }
             MyList<Tuple<string, float>>.Node lastOnly3 = null;
-            if (curr != null && isOnly3(curr.info.grades))
+            if (curr != null)
             {
                 student = new Tuple<string, float>(curr.info.last_name, mean(curr.info.grades));
-                studentsList1.AddBefore(studentsList1.first, student);
+                if (studentsList1.first != null)
+                {
+                    studentsList1.AddBefore(studentsList1.first, student);
+                }
+                else
+                {
+                    studentsList1.Add(student);
+                }
                 lastOnly3 = studentsList1.first;
                 curr = curr.next;
             }
